@@ -3,7 +3,7 @@
 #include <cstddef>
 #include <typeinfo>
 #include <iostream>
-
+#include "Test.h"
 using namespace std;
 
 int ress(int x,int y){
@@ -19,5 +19,7 @@ Java_com_example_cpp_1demo_MainActivity_stringFromJNI(
     std::string hello = "Hello from C++"+strTest;
 
     printf("x+y=%d\n",ress(1,2));
+//    Test test;
+//    test.mode(hello);
     return env->NewStringUTF(hello.c_str());
 }
