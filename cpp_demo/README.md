@@ -22,3 +22,4 @@ https://blog.csdn.net/liitdar/article/details/81145791
 https://blog.csdn.net/Kazinshy/article/details/120779786
 
 
+android ndk cmake 编译so库和导入so库:https://blog.csdn.net/r_rock/article/details/112914626
