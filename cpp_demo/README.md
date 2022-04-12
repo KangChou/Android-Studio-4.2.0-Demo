@@ -23,12 +23,49 @@ D:\cpp_demo\app\build\intermediates\cmake\debug\obj\arm64-v8a\libnative-lib.so
 
 
 
-## 二、动态库构建在指定路径下的调用
+## 二、动态库构建在指定路径下的NDK调用
+
+新建一个android ndk项目，将上个项目的头文件和so库拷贝到cpp文件夹下
+![image](https://user-images.githubusercontent.com/36963108/162864045-a9e02f38-455d-402e-9493-6aca10eafb54.png)
+编写对应的cmake
+```
+
+cmake_minimum_required(VERSION 3.4.1)
+
+add_library( # Sets the name of the library.
+             native-lib
+
+             # Sets the library as a shared library.
+             SHARED
+
+             # Provides a relative path to your source file(s).
+             native-lib.cpp )
 
 
+find_library( # Sets the name of the path variable.
+              log-lib
 
+              # Specifies the name of the NDK library that
+              # you want CMake to locate.
+              log )
 
+add_library(test01 SHARED IMPORTED)#导入外部库 
+set_target_properties(test01 PROPERTIES IMPORTED_LOCATION ${CMAKE_SOURCE_DIR}/ku/libtest01.so )#设置导入外部库的路径
 
+target_link_libraries( # Specifies the target library.
+                       native-lib
+
+                       # Links the target library to the log library
+                       # included in the NDK.
+                       ${log-lib}
+        test01
+        )
+
+```
+
+参考来源:https://blog.csdn.net/r_rock/article/details/112914626
+
+NDK Android CMake 编译so库可参考：https://github.com/seeways/NDKDemo
 
 
 ![image](https://user-images.githubusercontent.com/36963108/162713046-d6a4ab29-587c-46e7-9ded-c144b64b6ac0.png)
