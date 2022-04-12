@@ -70,6 +70,12 @@ target_link_libraries( # Specifies the target library.
 
 NDK Android CMake 编译so库可参考：https://github.com/seeways/NDKDemo
 
+Android Project about cpp //c++语法: https://github.com/sxwn/ndkcpp
+
+ndk-samples:https://github.com/android/ndk-samples
+
+OpenCV ndk:https://github.com/xiaoxiaoqingyi/NDKDemos
+
 ![image](https://user-images.githubusercontent.com/36963108/162713046-d6a4ab29-587c-46e7-9ded-c144b64b6ac0.png)
 
 
